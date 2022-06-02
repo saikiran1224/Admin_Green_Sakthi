@@ -62,6 +62,7 @@ class OrderDetailsActivity : AppCompatActivity() {
     private var transMode = ""
     private var transMessage = ""
     private var orderStatus = ""
+    private var key = ""
 
     lateinit var db: FirebaseFirestore
 
@@ -118,6 +119,7 @@ class OrderDetailsActivity : AppCompatActivity() {
         transMode = intent.getStringExtra("transactionMode").toString()
         transMessage = intent.getStringExtra("transactionID").toString()
         orderStatus = intent.getStringExtra("orderStatus").toString()
+        key = intent.getStringExtra("key").toString()
 
         // setting values to the Text Views
         txtOrderID.text = "Order ID: #$orderID"
@@ -145,7 +147,6 @@ class OrderDetailsActivity : AppCompatActivity() {
 
             btnRecvdPayment.visibility = View.GONE
 
-
             txtTransMessage.text = transMessage
             txtTransMessage.setTextColor(resources.getColor(R.color.green))
             txtTransMessage.compoundDrawableTintList = ColorStateList.valueOf(resources.getColor(R.color.green))
@@ -158,7 +159,7 @@ class OrderDetailsActivity : AppCompatActivity() {
 
             // Change the Transaction Status - Paid (COD - Paid)
             db.collection("Orders_Data")
-                .document(orderID)
+                .document(key)
                 .update(mapOf(
                     "transactionID" to "Received Amount",
                     "transactionMode" to "COD-paid"
@@ -228,7 +229,7 @@ class OrderDetailsActivity : AppCompatActivity() {
         btnConfirmed.setOnClickListener {
 
             db.collection("Orders_Data")
-                .document(orderID)
+                .document(key)
                 .update("orderStatus","Confirmed")
                 .addOnSuccessListener {
 
@@ -245,7 +246,7 @@ class OrderDetailsActivity : AppCompatActivity() {
         btnInTransit.setOnClickListener {
 
             db.collection("Orders_Data")
-                .document(orderID)
+                .document(key)
                 .update("orderStatus","In Transit")
                 .addOnSuccessListener {
 
@@ -261,7 +262,7 @@ class OrderDetailsActivity : AppCompatActivity() {
         btnDelivered.setOnClickListener {
 
             db.collection("Orders_Data")
-                .document(orderID)
+                .document(key)
                 .update("orderStatus","Delivered")
                 .addOnSuccessListener {
 

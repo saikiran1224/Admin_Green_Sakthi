@@ -14,6 +14,7 @@ data class OrderData(
     var custName: String = "",
     var custPhone: String = "",
     var custID: String = "",
+    var key: String = ""
 
     // The above Order Data can be sub divided into three different categories
     // - Customer details (custID, custName, custPhone, custAddress)

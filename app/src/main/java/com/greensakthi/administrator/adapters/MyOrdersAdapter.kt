@@ -3,6 +3,7 @@ package com.greensakthi.administrator.adapters
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,7 @@ class MyOrdersAdapter(private val context: Context, private val myOrdersList: Ar
         return ViewHolder(view)
     }
 
-    @SuppressLint("SetTextI18n", "ResourceAsColor")
+    @SuppressLint("SetTextI18n", "ResourceAsColor", "UseCompatTextViewDrawableApis")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.fuelTitle.text = myOrdersList[position].fuelName
@@ -32,12 +33,24 @@ class MyOrdersAdapter(private val context: Context, private val myOrdersList: Ar
         holder.finalPrice.text = "₹ " + myOrdersList[position].finalPrice
 
         if (myOrdersList[position].transactionMode == "COD") {
-
             holder.relativeLayout.setBackgroundColor(context.resources.getColor(R.color.due_bg))
         } else {
-
             holder.relativeLayout.setBackgroundColor(context.resources.getColor(R.color.edt_bg))
+        }
 
+        val orderStatus = myOrdersList[position].orderStatus
+        if(orderStatus == "Placed") {
+            holder.orderStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_placed, 0, 0, 0)
+            holder.orderStatus.compoundDrawableTintList = ColorStateList.valueOf(context.resources.getColor(R.color.white))
+        } else if(orderStatus == "Confirmed") {
+            holder.orderStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_confirmed_svgrepo_com, 0, 0, 0)
+            holder.orderStatus.compoundDrawableTintList = ColorStateList.valueOf(context.resources.getColor(R.color.white))
+        } else if(orderStatus == "In Transit") {
+            holder.orderStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_in_transit, 0, 0, 0)
+            holder.orderStatus.compoundDrawableTintList = ColorStateList.valueOf(context.resources.getColor(R.color.white))
+        } else {
+            holder.orderStatus.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_delivered, 0, 0, 0)
+            holder.orderStatus.compoundDrawableTintList = ColorStateList.valueOf(context.resources.getColor(R.color.white))
         }
 
         holder.txtTimeStamp.text = myOrdersList[position].dateTimePlaced
@@ -58,6 +71,7 @@ class MyOrdersAdapter(private val context: Context, private val myOrdersList: Ar
             intent.putExtra("custAddress", myOrdersList.get(position).address)
             intent.putExtra("orderStatus", myOrdersList.get(position).orderStatus)
             intent.putExtra("finalPrice", myOrdersList.get(position).finalPrice)
+            intent.putExtra("key",myOrdersList.get(position).key)
             context.startActivity(intent)
 
         }

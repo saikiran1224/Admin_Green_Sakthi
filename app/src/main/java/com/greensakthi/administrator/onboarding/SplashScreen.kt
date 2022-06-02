@@ -26,10 +26,12 @@ class SplashScreen : AppCompatActivity() {
             if(AppPreferences.isLogin == true) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+                finish()
 
             } else {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
+                finish()
             }
 
         },3000)

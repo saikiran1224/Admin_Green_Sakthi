@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity() {
                     val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
                     myOrdersRecycler.adapter = myOrdersAdapter
                     myOrdersRecycler.layoutManager = linearLayoutManager
-                    myOrdersAdapter.notifyDataSetChanged()
 
                 } else {
                     // No Data in MyOrders

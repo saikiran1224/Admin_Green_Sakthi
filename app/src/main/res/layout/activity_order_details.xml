@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_green"
+    tools:context=".home.OrderDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtOrderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginBottom="@dimen/dimen_15dp"
+            android:text="Order Id: #163747583"
+            android:textColor="@color/green"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <!--Fuel Details Layout-->
+        <TextView
+            android:id="@+id/txtFuelDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtOrderId"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/order_status_btn"
+            android:backgroundTint="@color/edt_bg"
+            android:paddingStart="8dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="3dp"
+            android:text="Fuel Details"
+            android:textColor="@color/green"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:id="@+id/txtFuelDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFuelDetails"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:background="@drawable/plain_border_bg">
+
+            <TextView
+                android:id="@+id/txtFuelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_fuel_svgrepo_com"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/green"
+                android:text="Zeca Diesel"
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtFuelUnitPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtFuelName"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_toEndOf="@id/txtFuelName"
+                android:text="₹ 96.50 per Litre"
+                android:textColor="@color/green"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtFuelUnitPrice"
+                android:id="@+id/quantity_UnitPrice"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:drawableStart="@drawable/ic_details_svgrepo_com"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/green"
+                android:text="150 Litres | ₹ 1500.50"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <!-- Customer Details Layout-->
+        <TextView
+            android:id="@+id/txtCustomerDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtFuelDetailsLayout"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_30_dp"
+            android:background="@drawable/order_status_btn"
+            android:backgroundTint="@color/edt_bg"
+            android:paddingStart="8dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="3dp"
+            android:text="Customer Details"
+            android:textColor="@color/green"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCustomerDetails"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:id="@+id/customerDetailsLayout"
+            android:background="@drawable/plain_border_bg">
+
+
+            <TextView
+                android:id="@+id/txtCustID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="8dp"
+                android:drawableStart="@drawable/ic_id_svgrepo_com"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/green"
+                android:gravity="center_vertical"
+                android:text="1b0e0af9-b8aa-4ad4-b349-1f9160f3e0b3"
+                android:textColor="@color/green"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtCustName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCustID"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="10dp"
+                android:drawableStart="@drawable/ic_person_svgrepo_com"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/green"
+                android:gravity="center_vertical"
+                android:text="Customer Name"
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+
+
+            <TextView
+                android:id="@+id/txtCustPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCustName"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:drawableStart="@drawable/ic_phone_svgrepo_com"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/green"
+                android:text="+91 0000000000"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtCustAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCustPhone"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:drawableStart="@drawable/ic_map_pin_svgrepo_com"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:drawableTint="@color/green"
+                android:text="Address"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCustAddress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/btnCall"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_phone_svgrepo_com"
+                    android:clickable="true"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:focusable="true"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:background="@drawable/green_border_bg"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/lexend"
+                    android:drawablePadding="-10dp"
+                    android:drawableTint="@color/green"
+                    android:gravity="center"
+                    android:shadowColor="#6C63FF"
+                    android:text="Call Customer"
+                    android:textColor="@color/green"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/btnLocate"
+                    android:layout_width="120dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:elevation="5dp"
+                    android:clickable="true"
+                    android:drawableTint="@color/green"
+                    android:focusable="true"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:drawablePadding="-10dp"
+                    android:drawableStart="@drawable/ic_map_pin_svgrepo_com"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:fontFamily="@font/lexend"
+                    android:gravity="center"
+                    android:shadowColor="#6C63FF"
+                    android:text="Directions"
+                    android:textColor="@color/green"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <!-- Order Details Layout-->
+        <TextView
+            android:id="@+id/txtOrderDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customerDetailsLayout"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_30_dp"
+            android:background="@drawable/order_status_btn"
+            android:backgroundTint="@color/edt_bg"
+            android:paddingStart="8dp"
+            android:paddingTop="3dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="3dp"
+            android:text="Order Details"
+            android:textColor="@color/green"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtOrderDetails"
+            android:layout_marginStart="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_marginEnd="@dimen/dimen_15dp"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:background="@drawable/plain_border_bg">
+
+
+            <TextView
+                android:id="@+id/dateTimePlaced"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="15dp"
+                android:layout_toStartOf="@id/txtTransactionMode"
+                android:drawableStart="@drawable/ic_i_schedule_school_date_time_svgrepo_com"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/green"
+                android:gravity="center_vertical|start"
+                android:text="31/5/2022 11:56:14 AM"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/txtTransactionMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/dimen_15dp"
+                android:drawablePadding="10dp"
+                android:drawableTint="@color/green"
+                android:gravity="center_vertical"
+                android:text="COD"
+                android:textColor="@color/green"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTransactionMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTransactionMode"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/btnRecvdPayment"
+                android:drawableStart="@drawable/ic_baseline_warning_24"
+                android:drawablePadding="2dp"
+                android:drawableTint="@color/red"
+                android:text="Collect Amount"
+                android:textColor="@color/red"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnRecvdPayment"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtTransactionMode"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/green_border_bg"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_baseline_check_circle_24"
+                android:drawableTint="@color/green"
+                android:elevation="5dp"
+                android:focusable="true"
+                android:fontFamily="@font/lexend"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center|center_vertical"
+                android:paddingStart="8dp"
+                android:paddingEnd="5dp"
+                android:shadowColor="#6C63FF"
+                android:text="Payment Done"
+                android:textColor="@color/green"
+                android:textSize="14.5sp"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/btnRecvdPayment_colored"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txtTransactionMode"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/green_border_bg"
+                android:backgroundTint="@color/green"
+                android:clickable="true"
+                android:drawableStart="@drawable/ic_baseline_check_circle_24"
+                android:drawableTint="@color/white"
+                android:elevation="5dp"
+                android:focusable="true"
+                android:fontFamily="@font/lexend"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:paddingEnd="5dp"
+                android:shadowColor="#6C63FF"
+                android:text="Payment Done"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+
+            <TextView
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTransactionMessage"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@string/dashes_line"
+                android:textColor="#DCDBDB"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/placedConfirmedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/btnPlaced"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_placed"
+                    android:drawablePadding="-20dp"
+                    android:drawableTint="@color/green"
+                    android:elevation="5dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="Placed"
+                    android:textColor="@color/green"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnPlaced_colored"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:backgroundTint="@color/green"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_placed"
+                    android:drawablePadding="-20dp"
+                    android:drawableTint="@color/white"
+                    android:elevation="5dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="Placed"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/btnConfirmed"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_confirmed_svgrepo_com"
+                    android:drawableTint="@color/green"
+                    android:elevation="10dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="Confirmed"
+                    android:textColor="@color/green"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnConfirmed_colored"
+                    android:layout_width="90dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:backgroundTint="@color/green"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_confirmed_svgrepo_com"
+                    android:drawableTint="@color/white"
+                    android:elevation="10dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="Confirmed"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/inTransitDeliveredLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/placedConfirmedLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/btnInTransit"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_in_transit"
+                    android:drawableTint="@color/green"
+                    android:elevation="5dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="In Transit"
+                    android:textColor="@color/green"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnInTransit_colored"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginBottom="3dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:backgroundTint="@color/green"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_in_transit"
+                    android:drawableTint="@color/white"
+                    android:elevation="5dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="In Transit"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/btnDelivered"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_delivered"
+                    android:drawableTint="@color/green"
+                    android:elevation="5dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="Delivered"
+                    android:textColor="@color/green"
+                    android:textSize="15sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btnDelivered_colored"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/green_border_bg"
+                    android:backgroundTint="@color/green"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_delivered"
+                    android:drawableTint="@color/white"
+                    android:elevation="5dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/lexend"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dimen_15dp"
+                    android:shadowColor="#6C63FF"
+                    android:text="Delivered"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

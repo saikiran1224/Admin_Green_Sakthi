@@ -15,7 +15,7 @@ import com.greensakthi.administrator.R
 import com.greensakthi.administrator.home.OrderDetailsActivity
 import com.greensakthi.administrator.models.OrderData
 
-class MyOrdersAdapter(private val context: Context, private val myOrdersList: ArrayList<OrderData>):
+class MyOrdersAdapter(private val context: Context, private var myOrdersList: List<OrderData>):
     RecyclerView.Adapter<MyOrdersAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -96,6 +96,13 @@ class MyOrdersAdapter(private val context: Context, private val myOrdersList: Ar
 
         val cardOrderInfo = itemView.findViewById<MaterialCardView>(R.id.cardOrderInfo)
 
+    }
+
+    // filter method for Search Option
+    @SuppressLint("NotifyDataSetChanged")
+    fun filterList(filteredList: List<OrderData?>) {
+        myOrdersList = filteredList as java.util.ArrayList<OrderData>
+        notifyDataSetChanged()
     }
 
 }

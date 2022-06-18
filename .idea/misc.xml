@@ -4,13 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/drawable-v24/green_border_bg.xml" value="0.1615" />
+        <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/drawable-v24/ic_baseline_search_24.xml" value="0.1325" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/drawable-v24/order_status_btn.xml" value="0.1645" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/drawable-v24/plain_border_bg.xml" value="0.1615" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/layout/activity_login.xml" value="0.2359375" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/layout/activity_order_details.xml" value="0.25" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/layout/dummy_file.xml" value="0.24895833333333334" />
         <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/layout/layout_order_info.xml" value="0.2763671875" />
+        <entry key="..\:/Android Apps/AdminGreenSakthi/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1325" />
       </map>
     </option>
   </component>

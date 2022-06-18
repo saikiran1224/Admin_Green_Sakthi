@@ -225,6 +225,24 @@ class OrderDetailsActivity : AppCompatActivity() {
             }
         }
 
+        // Placed Button onClick
+        btnPlaced.setOnClickListener {
+
+            db.collection("Orders_Data")
+                .document(key)
+                .update("orderStatus","Placed")
+                .addOnSuccessListener {
+
+                    sendIntent()
+
+                    btnPlaced_colored.visibility = View.VISIBLE
+                    btnPlaced.visibility = View.GONE
+                    btnPlaced_colored.isEnabled = false
+
+                }
+        }
+
+
         // Confirmed Button onClick
         btnConfirmed.setOnClickListener {
 

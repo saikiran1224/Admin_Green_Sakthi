@@ -29,18 +29,17 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/refreshIcon"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="12dp"
                 android:layout_marginEnd="@dimen/dimen_15dp"
+                android:layout_marginTop="12dp"
                 android:clickable="true"
-                android:contentDescription="@string/app_name"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:src="@drawable/ic_baseline_refresh_24"
-                app:tint="@color/green" />
+                app:tint="@color/green"
+                android:id="@+id/refeshIcon"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_baseline_refresh_24" />
 
             <EditText
                 android:id="@+id/edtSearchOrder"
@@ -63,8 +62,6 @@
                 android:paddingEnd="0dp"
                 android:textColor="@color/green"
                 android:textColorHint="@android:color/darker_gray" />
-
-
 
 
             <com.airbnb.lottie.LottieAnimationView
@@ -92,19 +89,65 @@
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@font/lexend"
                 android:gravity="center"
-                android:text="Sorry, No orders found. Once a customer places the order, it will be shown here"
+                android:text="Sorry, No orders found. Place an order and know your tracking status here"
                 android:textColor="@color/green"
                 android:textSize="18sp"
                 android:textStyle="normal" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edtSearchOrder"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:background="@drawable/edt_text_rounded_corner"
+                android:text="Today's Orders"
+                android:textColor="@color/green"
+                android:backgroundTint="@color/edt_bg"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:paddingStart="@dimen/dimen_15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:id="@+id/txtTodayOrders"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:textSize="19sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/todayOrdersRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTodayOrders"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dimen_15dp" />
+
+            <TextView
+                android:id="@+id/txtPreviousOrders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/todayOrdersRecycler"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_30_dp"
+                android:background="@drawable/edt_text_rounded_corner"
+                android:backgroundTint="@color/edt_bg"
+                android:paddingStart="@dimen/dimen_15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="@dimen/dimen_10dp"
+                android:paddingBottom="5dp"
+                android:text="Previous Orders"
+                android:textColor="@color/green"
+                android:textSize="19sp" />
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/myOrdersRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/edtSearchOrder"
+                android:layout_below="@id/txtPreviousOrders"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/dimen_15dp"
                 android:visibility="visible" />
+
+
 
         </RelativeLayout>
 

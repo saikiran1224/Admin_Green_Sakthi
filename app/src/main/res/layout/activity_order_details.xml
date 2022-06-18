@@ -81,14 +81,14 @@
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/quantity_UnitPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtFuelUnitPrice"
-                android:id="@+id/quantity_UnitPrice"
                 android:layout_alignParentStart="true"
+                android:layout_marginBottom="@dimen/dimen_15dp"
                 android:layout_marginStart="@dimen/dimen_15dp"
                 android:layout_marginTop="@dimen/dimen_10dp"
-                android:layout_marginBottom="@dimen/dimen_15dp"
                 android:drawableStart="@drawable/ic_details_svgrepo_com"
                 android:drawablePadding="8dp"
                 android:drawableTint="@color/green"
@@ -96,6 +96,7 @@
                 android:textColor="@color/green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
 
         </RelativeLayout>
 
@@ -188,7 +189,6 @@
                 android:layout_marginStart="@dimen/dimen_15dp"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="@dimen/dimen_15dp"
                 android:drawableStart="@drawable/ic_map_pin_svgrepo_com"
                 android:drawablePadding="@dimen/dimen_10dp"
                 android:drawableTint="@color/green"
@@ -197,10 +197,27 @@
                 android:textSize="16sp"
                 android:textStyle="normal" />
 
+            <TextView
+                android:id="@+id/txtOrderedForDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCustAddress"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:drawableStart="@drawable/ic_baseline_electric_bolt_24"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/green"
+                android:text="Generator"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtCustAddress"
+                android:layout_below="@id/txtOrderedForDetails"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="@dimen/dimen_15dp"

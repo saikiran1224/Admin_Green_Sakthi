@@ -13,9 +13,9 @@
         android:layout_width="500dp"
         android:layout_height="400dp"
         android:layout_marginStart="@dimen/dimen_40_dp"
-        android:layout_marginEnd="@dimen/dimen_40_dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/green_sakthi_logo" />
+        android:layout_marginEnd="@dimen/dimen_40_dp"
+        android:src="@drawable/gsf_logo_updated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +23,6 @@
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
-        android:layout_marginBottom="@dimen/dimen_20dp"
         android:fontFamily="@font/lexend"
         android:gravity="center"
         android:lineHeight="@dimen/dimen_30_dp"

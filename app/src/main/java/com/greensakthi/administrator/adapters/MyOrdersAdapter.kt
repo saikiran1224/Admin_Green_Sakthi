@@ -14,6 +14,8 @@ import com.google.android.material.card.MaterialCardView
 import com.greensakthi.administrator.R
 import com.greensakthi.administrator.home.OrderDetailsActivity
 import com.greensakthi.administrator.models.OrderData
+import java.text.NumberFormat
+import java.util.*
 
 class MyOrdersAdapter(private val context: Context, private var myOrdersList: List<OrderData>):
     RecyclerView.Adapter<MyOrdersAdapter.ViewHolder>() {
@@ -30,7 +32,13 @@ class MyOrdersAdapter(private val context: Context, private var myOrdersList: Li
         holder.orderID.text = "#" + myOrdersList[position].orderID
         holder.orderStatus.text = myOrdersList[position].orderStatus
         holder.quantity_UnitPrice.text = myOrdersList[position].fuelQuantitySelected + " x " + myOrdersList[position].fuelUnitPrice
-        holder.finalPrice.text = "₹ " + myOrdersList[position].finalPrice
+
+        // for converting into Indian Currency
+        val numberFormat: NumberFormat = NumberFormat.getCurrencyInstance()
+        numberFormat.maximumFractionDigits = 2
+        numberFormat.currency = Currency.getInstance("INR")
+
+        holder.finalPrice.text = numberFormat.format(myOrdersList[position].finalPrice.toFloat()).toString()
 
         if (myOrdersList[position].transactionMode == "COD") {
             holder.relativeLayout.setBackgroundColor(context.resources.getColor(R.color.due_bg))
@@ -72,6 +80,9 @@ class MyOrdersAdapter(private val context: Context, private var myOrdersList: Li
             intent.putExtra("orderStatus", myOrdersList.get(position).orderStatus)
             intent.putExtra("finalPrice", myOrdersList.get(position).finalPrice)
             intent.putExtra("key",myOrdersList.get(position).key)
+            intent.putExtra("orderedFor", myOrdersList.get(position).orderedFor)
+            intent.putExtra("vehicleName", myOrdersList.get(position).vehicleName)
+            intent.putExtra("modelNumber", myOrdersList.get(position).modelNumber)
             context.startActivity(intent)
 
         }

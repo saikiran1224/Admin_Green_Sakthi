@@ -30,7 +30,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="140dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/green_sakthi_logo" />
+            android:src="@drawable/gsf_logo_updated" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"

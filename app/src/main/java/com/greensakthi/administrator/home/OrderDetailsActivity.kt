@@ -13,6 +13,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.greensakthi.administrator.R
+import java.text.NumberFormat
+import java.util.*
 
 class OrderDetailsActivity : AppCompatActivity() {
 
@@ -26,6 +28,7 @@ class OrderDetailsActivity : AppCompatActivity() {
     lateinit var txtCustName: TextView
     lateinit var txtCustPhone: TextView
     lateinit var txtCustAddress: TextView
+    lateinit var txtOrderedFor: TextView
 
     lateinit var txtDateTime: TextView
     lateinit var txtTransMode: TextView
@@ -57,6 +60,9 @@ class OrderDetailsActivity : AppCompatActivity() {
     private var custName = ""
     private var custPhone = ""
     private var custAddress = ""
+    private var orderedFor = ""
+    private var vehicleName = ""
+    private var modelNumber = ""
 
     private var dateTimePlaced = ""
     private var transMode = ""
@@ -83,6 +89,7 @@ class OrderDetailsActivity : AppCompatActivity() {
         txtCustName = findViewById(R.id.txtCustName)
         txtCustPhone = findViewById(R.id.txtCustPhone)
         txtCustAddress = findViewById(R.id.txtCustAddress)
+        txtOrderedFor = findViewById(R.id.txtOrderedForDetails)
 
         btnCall = findViewById(R.id.btnCall)
         btnLocate = findViewById(R.id.btnLocate)
@@ -120,13 +127,23 @@ class OrderDetailsActivity : AppCompatActivity() {
         transMessage = intent.getStringExtra("transactionID").toString()
         orderStatus = intent.getStringExtra("orderStatus").toString()
         key = intent.getStringExtra("key").toString()
+        orderedFor = intent.getStringExtra("orderedFor").toString()
+        vehicleName = intent.getStringExtra("vehicleName").toString()
+        modelNumber = intent.getStringExtra("modelNumber").toString()
+
 
         // setting values to the Text Views
         txtOrderID.text = "Order ID: #$orderID"
 
         txtFuelName.text = fuelName
         txtFuelUnitPrice.text = fuelUnitPrice
-        txtQuantityFinalPrice.text = "$fuelQuantity Litres | ₹  $fuelFinalPrice"
+
+        // for converting into Indian Currency
+        val numberFormat: NumberFormat = NumberFormat.getCurrencyInstance()
+        numberFormat.maximumFractionDigits = 2
+        numberFormat.currency = Currency.getInstance("INR")
+
+        txtQuantityFinalPrice.text = "$fuelQuantity Litres | ₹  ${numberFormat.format(fuelFinalPrice.toFloat())}"
 
         txtCustID.text = custID
         txtCustName.text = custName
@@ -135,6 +152,22 @@ class OrderDetailsActivity : AppCompatActivity() {
 
         txtDateTime.text = dateTimePlaced
         txtTransMode.text = transMode
+
+        // Ordered for Details
+        if(orderedFor == "My Generator") {
+
+            // For Generator
+            txtOrderedFor.text = "Generator"
+            txtOrderedFor.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_baseline_electric_bolt_24, 0, 0, 0)
+
+        } else {
+
+            // For Vehicle
+            txtOrderedFor.text = "$vehicleName $modelNumber"
+            txtOrderedFor.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_baseline_directions_car_24, 0, 0, 0)
+
+        }
+
 
         // Transaction Status
         if(transMode == "COD") {
